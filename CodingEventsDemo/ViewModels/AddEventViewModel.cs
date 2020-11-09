@@ -18,5 +18,12 @@ namespace CodingEventsDemo.ViewModels
 
         [EmailAddress]
         public string ContactEmail { get; set; }
+
+        [Required]
+        [StringLength(50, ErrorMessage ="Location has a max character length of 50")]
+        public string Location { get; set; }
+
+        [Range(0,100000, ErrorMessage = "Must be numbers from 0 to 100,000.")]
+        public int NumOfAttendees { get; set; }
     }
 }
